@@ -23,19 +23,24 @@ document.addEventListener('DOMContentLoaded', function() {
         };
         
         li.appendChild(removeBtn);
-        
         taskList.appendChild(li);
-        
         taskInput.value = '';
     }
 
-    addButton.addEventListener('click', addTask);
+    // ✅ Load tasks when the page loads
+    function loadTasks() {
+        
+        console.log("loadTasks function called");
+    }
 
+    // Event listeners
+    addButton.addEventListener('click', addTask);
     taskInput.addEventListener('keypress', function(event) {
         if (event.key === 'Enter') {
             addTask();
         }
     });
 
-    addTask();
+    // ✅ Call loadTasks() when DOM is ready
+    loadTasks();
 });
